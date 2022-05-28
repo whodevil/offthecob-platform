@@ -4,6 +4,7 @@ plugins {
 
 subprojects {
     apply(plugin = "maven-publish")
+    group = "info.offthecob.jvm-platform"
     configure<PublishingExtension> {
         repositories {
             maven {
