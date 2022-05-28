@@ -1,6 +1,13 @@
 rootProject.name = "jvm-platform"
 
 dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            url = uri("https://jitpack.io")
+        }
+    }
+
     versionCatalogs {
         create("libs") {
             from(files("libs.versions.toml"))
