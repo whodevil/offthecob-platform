@@ -10,3 +10,11 @@ dependencies {
         api(libs.bundles.apache.commons)
     }
 }
+
+configure<PublishingExtension> {
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["javaPlatform"])
+        }
+    }
+}
