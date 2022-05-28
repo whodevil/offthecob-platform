@@ -1,5 +1,5 @@
 plugins {
-    `maven-publish` apply false
+    `maven-publish`
 }
 
 subprojects {
