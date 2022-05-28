@@ -1,6 +1,8 @@
 [versions]
 commons-lang3 = "3.12.0"
 dependencycheck = "6.5.3"
+groovy = "3.0.10"
+gson = "2.9.0"
 guava = "30.1.1-jre"
 guice = "5.1.0"
 junit = "5.6.0"
@@ -14,11 +16,15 @@ spock = "2.2-M1-groovy-3.0"
 [libraries]
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
 google-guice = { module = "com.google.inject:guice", version.ref = "guice" }
+groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy"}
+groovy-json = { module = "org.codehaus.groovy:groovy-json", version.ref = "groovy"}
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice",  version.ref = "kotlin-guice" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4j-jcl = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-log4j = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
@@ -28,8 +34,9 @@ spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
 [bundles]
 apache-commons = ["commons-lang3"]
 guice = ["google-guice", "kotlin-guice"]
-logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback"]
+logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core"]
 spock = ["spock-core", "junit"]
+groovy = ["groovy-lang", "groovy-json"]
 
 [plugins]
 dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck" }
