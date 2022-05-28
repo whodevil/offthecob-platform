@@ -21,3 +21,10 @@ tasks.test {
     testLogging.showStandardStreams = true
 }
 
+configure<PublishingExtension> {
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
+}
