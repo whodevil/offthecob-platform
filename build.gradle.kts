@@ -5,6 +5,7 @@ plugins {
 subprojects {
     apply(plugin = "maven-publish")
     group = "info.offthecob.jvm.platform"
+    version = System.getenv("REVISION") ?: "v9999999999"
     configure<PublishingExtension> {
         repositories {
             maven {
