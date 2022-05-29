@@ -36,8 +36,7 @@ slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
 
 [bundles]
-apache-commons = ["commons-lang3", "commons-lang
-    "]
+apache-commons = ["commons-lang3", "commons-lang"]
 guice = ["google-guice", "kotlin-guice"]
 logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core"]
 spock = ["spock-core", "junit", "objenesis"]
