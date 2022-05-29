@@ -11,6 +11,7 @@ kotlin = "1.6.21"
 kotlin-guice = "1.6.0"
 kotlin-logging = "1.7.6"
 logback = "1.2.3"
+objenesis = "3.2"
 slf4j = "1.7.25"
 spock = "2.2-M1-groovy-3.0"
 
@@ -26,6 +27,7 @@ kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref =
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice",  version.ref = "kotlin-guice" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
+objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4j-jcl = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-log4j = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
@@ -36,7 +38,7 @@ spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
 apache-commons = ["commons-lang3"]
 guice = ["google-guice", "kotlin-guice"]
 logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core"]
-spock = ["spock-core", "junit"]
+spock = ["spock-core", "junit", "objenesis"]
 groovy = ["groovy-lang", "groovy-json"]
 
 [plugins]
