@@ -7,6 +7,7 @@ gson = "2.9.0"
 guava = "30.1.1-jre"
 guice = "5.1.0"
 jacoco = "0.8.7"
+jib = "3.2.1"
 junit = "5.6.0"
 klaxon = "5.5"
 kotlin = "1.6.21"
@@ -48,5 +49,6 @@ groovy = ["groovy-lang", "groovy-json"]
 
 [plugins]
 dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
