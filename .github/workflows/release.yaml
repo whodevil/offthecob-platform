@@ -21,6 +21,6 @@ jobs:
         with:
           arguments: publish
         env:
-          USERNAME: whodevil
+          USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REVISION: ${{ github.event.release.tag_name }}
