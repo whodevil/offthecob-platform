@@ -1,4 +1,5 @@
 [versions]
+aws = "2.1.1"
 commons-lang = "3.12.0"
 dependencycheck = "6.5.3"
 graphql = "13.0"
@@ -31,6 +32,7 @@ junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" 
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice",  version.ref = "kotlin-guice" }
+lambda = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version.ref = "aws" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
