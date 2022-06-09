@@ -32,7 +32,9 @@ junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" 
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice",  version.ref = "kotlin-guice" }
-lambda = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version.ref = "aws" }
+lambda-core = { module = "com.amazonaws:aws-lambda-java-core", version = { strictly = "1.2.1" } }
+lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version = { strictly = "3.9.0" } }
+lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version = { strictly = "2.1.1" } }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
@@ -45,6 +47,7 @@ spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
 [bundles]
 apache-commons = ["commons-lang3", "commons-lang"]
 guice = ["google-guice", "kotlin-guice"]
+lambda = ["lambda-runtime", "lambda-core", "lambda-events"]
 logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core"]
 spock = ["spock-core", "junit", "objenesis"]
 groovy = ["groovy-lang", "groovy-json"]
