@@ -4,7 +4,7 @@ This is a set of "jvm platforms" intended to help me keep my personal projects
 libraries up to date.
 
 # Catalog
-Produces an artifact containing the library versions maintained in `libs.versions.toml`.
+Produces an artifact containing the library versions maintained in `gradle/libs.versions.toml`.
 This artifact can be used downstream in other projects with the gradle `versionsCatalog`
 api. Essentially the catalog helps keep the list of approved libraries maintained in 
 one place.

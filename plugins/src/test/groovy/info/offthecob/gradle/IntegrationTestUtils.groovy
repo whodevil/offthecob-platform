@@ -41,7 +41,7 @@ class IntegrationTestUtils {
             }
             versionCatalogs {
                 create("libs") {
-                    from(files("${libraryDir.absolutePath}/libs.versions.toml"))
+                    from(files("${libraryDir.absolutePath}/gradle/libs.versions.toml"))
                 }
             }
         }
