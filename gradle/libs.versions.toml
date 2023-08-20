@@ -44,6 +44,7 @@ lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version = { s
 lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version = { strictly = "2.1.1" } }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
+logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", version = "7.3" }
 nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
@@ -57,7 +58,7 @@ spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.re
 apache-commons = ["commons-lang3", "commons-lang"]
 guice = ["google-guice", "kotlin-guice"]
 lambda = ["lambda-runtime", "lambda-core", "lambda-events"]
-logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core"]
+logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core", "logback-logstash"]
 spock = ["spock-core", "junit", "objenesis"]
 groovy = ["groovy-lang", "groovy-json"]
 
