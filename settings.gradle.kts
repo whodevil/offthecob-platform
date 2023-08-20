@@ -21,12 +21,6 @@ dependencyResolutionManagement {
             url = uri("https://jitpack.io")
         }
     }
-
-    versionCatalogs {
-        create("libs") {
-            from(files("libs.versions.toml"))
-        }
-    }
 }
 
 rootProject.projectDir.listFiles().filter { it.isDirectory }.map { subDir ->
