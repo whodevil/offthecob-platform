@@ -8,41 +8,50 @@ gson = "2.9.0"
 guava = "30.1.1-jre"
 guice = "5.1.0"
 jacoco = "0.8.7"
-jib = "3.2.1"
-junit = "5.6.0"
+jib = "3.3.2"
+junit = "5.9.1"
 klaxon = "5.5"
 kotlin = "1.6.21"
 kotlin-guice = "1.6.0"
 kotlin-logging = "1.7.6"
 logback = "1.2.3"
+nullaway-plugin = "1.5.0"
 objenesis = "3.2"
 slf4j = "1.7.25"
 spock = "2.2-M1-groovy-3.0"
+spotless = "6.20.0"
 
 [libraries]
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
-commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang"}
+commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.18.0" }
+errorprone-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "3.1.0" }
 google-guice = { module = "com.google.inject:guice", version.ref = "guice" }
 graphql = { module = "com.graphql-java:graphql-java", version.ref = "graphql" }
-groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy"}
-groovy-json = { module = "org.codehaus.groovy:groovy-json", version.ref = "groovy"}
+groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
+groovy-json = { module = "org.codehaus.groovy:groovy-json", version.ref = "groovy" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version = "24.0.1" }
+jib = { module = "com.google.cloud.tools:jib-gradle-plugin", version.ref = "jib" }
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.9.3" }
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
-kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice",  version.ref = "kotlin-guice" }
+kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice", version.ref = "kotlin-guice" }
 lambda-core = { module = "com.amazonaws:aws-lambda-java-core", version = { strictly = "1.2.1" } }
 lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version = { strictly = "3.9.0" } }
 lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version = { strictly = "2.1.1" } }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
+nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4j-jcl = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-log4j = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 spock-core = { module = "org.spockframework:spock-core", version.ref = "spock" }
+spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
 [bundles]
 apache-commons = ["commons-lang3", "commons-lang"]
@@ -57,3 +66,5 @@ dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencyc
 jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+nullaway = { id = "net.ltgt.nullaway", version.ref = "nullaway-plugin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
