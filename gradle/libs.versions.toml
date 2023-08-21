@@ -1,7 +1,7 @@
 [versions]
 aws = "2.1.1"
 commons-lang = "3.12.0"
-dependencycheck = "6.5.3"
+dependencycheck = "8.4.0"
 dgs = "7.3.6"
 graphql = "13.0"
 groovy = "3.0.10"
