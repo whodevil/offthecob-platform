@@ -4,7 +4,6 @@ import com.diffplug.gradle.spotless.SpotlessPlugin
 import net.ltgt.gradle.nullaway.NullAwayPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.plugins.ExtraPropertiesExtension
 import org.gradle.api.plugins.GroovyPlugin
 import org.gradle.api.plugins.JavaPlugin
 
@@ -19,10 +18,9 @@ class BasePlugin : Plugin<Project> {
             apply(NullAwayPlugin::class.java)
             apply(NullAwayCustomization::class.java)
             apply(DependencyLocking::class.java)
-            val ext = project.extensions.getByType(ExtraPropertiesExtension::class.java)
 
             // Spotless is not currently compatible with the ProjectBuilder test framework
-            if (!ext.properties.containsKey(PROJECT_BUILDER_TEST)) {
+            if (!pluginUnderTest(project)) {
                 apply(SpotlessPlugin::class.java)
                 apply(SpotlessCustomization::class.java)
             }

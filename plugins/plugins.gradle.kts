@@ -33,6 +33,10 @@ gradlePlugin {
             id = "info.offthecob.Library"
             implementationClass = "info.offthecob.gradle.LibraryPlugin"
         }
+        create("springService") {
+            id = "info.offthecob.SpringService"
+            implementationClass = "info.offthecob.gradle.SpringService"
+        }
     }
 }
 
@@ -41,6 +45,9 @@ dependencies {
     api(libs.jib)
     api(libs.nullaway.plugin)
     api(libs.spotless)
+    api(libs.spring.boot.gradle)
+    api(libs.spring.boot.jib.extension)
+    api(libs.spring.dependency.management)
     compileOnly(libs.jetbrains.annotations)
 
     testImplementation(gradleTestKit())
