@@ -123,4 +123,23 @@ class IntegrationTestUtils {
         """.stripIndent()
         kotlinFile << function
     }
+
+    void springProject() {
+        defaultSettings()
+        springBuildGradle()
+        defaultJavaMain()
+    }
+
+    void springBuildGradle() {
+        def buildGradle = new File(projectDir, "build.gradle.kts")
+        buildGradle << """
+        plugins {
+            id("info.offthecob.SpringService")
+        }
+        dependencies {
+            implementation("org.springframework.boot:spring-boot-starter")
+            implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
+        }
+        """.stripIndent()
+    }
 }

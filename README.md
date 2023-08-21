@@ -41,3 +41,14 @@ plugins {
     id("info.offthecob.Service")
 }
 ```
+
+## Spring Service
+This uses everything in Service, but also adds the Spring special sauce.
+Specifically, it adds the spring boot and dependency management plugins into scope, and customizes them
+with best practices. It also applies the jib extension for Spring.
+
+```gradle
+plugins {
+    id("info.offthecob.SpringService")
+}
+```
