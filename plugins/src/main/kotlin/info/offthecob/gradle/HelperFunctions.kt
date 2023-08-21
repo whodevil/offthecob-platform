@@ -12,14 +12,6 @@ fun pluginUnderTest(project: Project): Boolean {
     return ext.properties.containsKey(PROJECT_BUILDER_TEST)
 }
 
-fun versionCatalog(project: Project): VersionCatalog {
-    try {
-        return project.rootProject.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
-    } catch (_: UnknownDomainObjectException) {
-        throw GradleException("This plugin expects a Version Catalog named 'libs', see https://docs.gradle.org/current/userguide/platforms.html")
-    }
-}
-
 fun getVersion(project: Project, name: String, default: String): String {
     val catalog: VersionCatalog? = try {
         project.rootProject.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
