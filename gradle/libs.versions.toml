@@ -39,8 +39,9 @@ jib = { module = "com.google.cloud.tools:jib-gradle-plugin", version.ref = "jib"
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.9.3" }
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
-kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice", version.ref = "kotlin-guice" }
+kotlin-jvm-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}
+kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
 lambda-core = { module = "com.amazonaws:aws-lambda-java-core", version = { strictly = "1.2.1" } }
 lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version = { strictly = "3.9.0" } }
 lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version = { strictly = "2.1.1" } }

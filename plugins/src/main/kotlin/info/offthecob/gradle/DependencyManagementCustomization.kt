@@ -14,22 +14,23 @@ class DependencyManagementCustomization : Plugin<Project> {
             project.logger.log(LogLevel.WARN, "plugin under test, bypassing DependencyManagementCustomization")
             return
         }
-        val dependencyManagement = project.extensions.getByType(DependencyManagementExtension::class.java)
-        val catalog = versionCatalog(project)
-        dependencyManagement.imports {
-            listOf(
-                Pair(
-                    "org.springframework.boot:spring-boot-dependencies",
-                    if (catalog.findVersion(SPRING_BOOT).isPresent) catalog.findVersion(SPRING_BOOT).get() else "3.1.2",
-                ),
-                Pair(
-                    "com.netflix.graphql.dgs:graphql-dgs-platform-dependencies",
-                    if (catalog.findVersion(DGS).isPresent) catalog.findVersion(DGS).get() else "7.3.6",
-                ),
-            )
-                .forEach { (path, version) ->
-                    mavenBom("$path:$version")
-                }
-        }
+        project
+            .extensions
+            .getByType(DependencyManagementExtension::class.java)
+            .imports {
+                listOf(
+                    Pair(
+                        "org.springframework.boot:spring-boot-dependencies",
+                        getVersion(project, SPRING_BOOT, SPRING_BOOT_DEFAULT_VERSION),
+                    ),
+                    Pair(
+                        "com.netflix.graphql.dgs:graphql-dgs-platform-dependencies",
+                        getVersion(project, DGS, DGS_DEFAULT_VERSION),
+                    ),
+                )
+                    .forEach { (path, version) ->
+                        mavenBom("$path:$version")
+                    }
+            }
     }
 }

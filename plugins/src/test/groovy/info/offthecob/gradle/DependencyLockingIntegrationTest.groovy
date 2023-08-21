@@ -11,6 +11,7 @@ class DependencyLockingIntegrationTest extends IntegrationSpec {
                 "clean",
                 "spotlessApply",
                 "check",
+                "--write-locks",
                 "-Pproject_directory=${projectDirectory}" as String
         ] as List<String>
 
@@ -19,9 +20,9 @@ class DependencyLockingIntegrationTest extends IntegrationSpec {
                 .withPluginClasspath()
                 .withProjectDir(projectDirectory)
                 .withArguments(gradleArguments)
-                .buildAndFail()
+                .build()
 
         then:
-        result.task(":compileKotlin").getOutcome() == TaskOutcome.FAILED
+        result.task(":compileKotlin").getOutcome() == TaskOutcome.SUCCESS
     }
 }

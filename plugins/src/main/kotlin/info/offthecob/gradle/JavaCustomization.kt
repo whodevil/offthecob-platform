@@ -7,7 +7,7 @@ import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JvmVendorSpec
 
-val JVM_VERSION = JavaLanguageVersion.of(17)
+val JVM_VERSION = JavaLanguageVersion.of(JVM_DEFAULT_VERSION)
 val JVM_VENDOR = JvmVendorSpec.ADOPTIUM
 
 class JavaCustomization : Plugin<Project> {

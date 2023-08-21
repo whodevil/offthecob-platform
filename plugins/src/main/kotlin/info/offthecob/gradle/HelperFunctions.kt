@@ -19,3 +19,18 @@ fun versionCatalog(project: Project): VersionCatalog {
         throw GradleException("This plugin expects a Version Catalog named 'libs', see https://docs.gradle.org/current/userguide/platforms.html")
     }
 }
+
+fun getVersion(project: Project, name: String, default: String): String {
+    val catalog: VersionCatalog? = try {
+        project.rootProject.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+    } catch (_: UnknownDomainObjectException) {
+        null
+    }
+
+    return if (catalog != null && catalog.findVersion(name).isPresent) {
+        catalog.findVersion(name).get().toString()
+    } else {
+        project.logger.info("Plugin looked in Version Catalog 'libs' for version $name, and did not find anything, using default value $default.")
+        default
+    }
+}
