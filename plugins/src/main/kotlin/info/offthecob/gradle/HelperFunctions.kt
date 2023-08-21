@@ -28,7 +28,9 @@ fun getVersion(project: Project, name: String, default: String): String {
     }
 
     return if (catalog != null && catalog.findVersion(name).isPresent) {
-        catalog.findVersion(name).get().toString()
+        val version = catalog.findVersion(name).get().toString()
+        project.logger.info("Using catalog version $version for $name")
+        version
     } else {
         project.logger.info("Plugin looked in Version Catalog 'libs' for version $name, and did not find anything, using default value $default.")
         default
