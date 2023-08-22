@@ -48,6 +48,8 @@ dependencies {
     api(libs.spring.boot.gradle)
     api(libs.spring.boot.jib.extension)
     api(libs.spring.dependency.management)
+    api(libs.kotlin.jvm.plugin)
+    api(libs.kotlin.allopen)
     compileOnly(libs.jetbrains.annotations)
 
     testImplementation(gradleTestKit())

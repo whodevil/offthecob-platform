@@ -13,6 +13,7 @@ class SpringService : Plugin<Project> {
             apply(DependencyManagementCustomization::class.java)
             apply(SpringBootPlugin::class.java)
             apply(JibSpringCustomization::class.java)
+            apply("kotlin-spring")
         }
     }
 }

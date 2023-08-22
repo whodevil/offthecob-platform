@@ -15,6 +15,9 @@ class BasePlugin : Plugin<Project> {
             apply(JavaPlugin::class.java)
             apply(JavaCustomization::class.java)
             apply(GroovyPlugin::class.java)
+            apply("kotlin")
+            apply(KotlinCustomization::class.java)
+
             apply(NullAwayPlugin::class.java)
             apply(NullAwayCustomization::class.java)
             apply(DependencyLocking::class.java)

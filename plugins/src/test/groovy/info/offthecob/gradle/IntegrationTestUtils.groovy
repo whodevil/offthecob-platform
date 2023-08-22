@@ -53,7 +53,6 @@ class IntegrationTestUtils {
         buildGradle << """
         plugins {
             id("info.offthecob.Base")
-            kotlin("jvm") version "1.9.0"
         }
         dependencies {
             implementation(libs.google.guice)
@@ -105,6 +104,19 @@ class IntegrationTestUtils {
                 then:
                 observed == Main.FORMATTED_STRING.formatted(input)
             }
+            
+            def "kotlin expected outputs"() {
+                given:
+                def input = "input"
+                def input2 = "input2"
+                def input3 = "input3"
+                
+                when:
+                def observed = KotlinFunctionalKt.functionalFun(input, input2, input3)
+                
+                then:
+                observed == "\$input \$input2 \$input3 functional"
+            }
         }
         """.stripIndent()
         mainTestFile << mainTest
@@ -119,7 +131,7 @@ class IntegrationTestUtils {
         def function = """
         package info.offthecob.testing
         fun functionalFun(input: String, input2: String,
-                          input3: String): String { return "${'$'}input functional" }
+                          input3: String): String { return "${'$'}input ${'$'}input2 ${'$'}input3 functional" }
         """.stripIndent()
         kotlinFile << function
     }
