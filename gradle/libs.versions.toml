@@ -76,3 +76,4 @@ kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "ko
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 nullaway = { id = "net.ltgt.nullaway", version.ref = "nullaway-plugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+gradle-publish-plugin = { id = "com.gradle.plugin-publish", version = "1.1.0"}
