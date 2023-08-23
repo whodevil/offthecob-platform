@@ -21,7 +21,7 @@ java {
 }
 
 group = "info.offthecob"
-version = System.getenv("REVISION") ?: "v9999999999"
+version = System.getenv("REVISION") ?: "SNAPSHOT"
 
 gradlePlugin {
     website.set("https://github.com/whodevil/jvm-platform")
