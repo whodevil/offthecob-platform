@@ -12,7 +12,7 @@ java {
 
 configure<PublishingExtension> {
     publications {
-        register<MavenPublication>("gpr") {
+        register<MavenPublication>("Common") {
             from(components["java"])
         }
     }
