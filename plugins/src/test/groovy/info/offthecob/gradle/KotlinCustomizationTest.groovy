@@ -14,18 +14,9 @@ class KotlinCustomizationTest extends IntegrationSpec {
         settingsGradle.delete()
         def settings = """
         plugins {
-            id("org.gradle.toolchains.foojay-resolver") version "0.6.0"
+            id("info.offthecob.Settings")
         }
         rootProject.name = "test-project"
-        toolchainManagement {
-            jvm {
-                javaRepositories {
-                    repository("foojay") {
-                        resolverClass.set(org.gradle.toolchains.foojay.FoojayToolchainResolver::class.java)
-                    }
-                }
-            }
-        }
         dependencyResolutionManagement {
             repositories {
                 mavenCentral()

@@ -6,20 +6,11 @@ import org.gradle.testkit.runner.TaskOutcome
 
 class BasePluginTest extends IntegrationSpec {
     def "happy path"() {
-        given:
-        def gradleArguments = [
-                "clean",
-                "spotlessApply",
-                "check",
-                "-Pproject_directory=${projectDirectory}" as String,
-                "--write-locks"
-        ] as List<String>
-
         when:
         BuildResult result = GradleRunner.create()
                 .withPluginClasspath()
                 .withProjectDir(projectDirectory)
-                .withArguments(gradleArguments)
+                .withArguments(utils.happyPathGradleArgs())
                 .build()
 
         then:

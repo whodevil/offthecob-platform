@@ -28,6 +28,7 @@ commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "co
 commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.18.0" }
 errorprone-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "3.1.0" }
+foojay-resolver =  { module = "org.gradle.toolchains:foojay-resolver", version = "0.7.0" }
 google-guice = { module = "com.google.inject:guice", version.ref = "guice" }
 graphql = { module = "com.graphql-java:graphql-java", version.ref = "graphql" }
 groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
