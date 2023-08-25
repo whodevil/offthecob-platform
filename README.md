@@ -77,3 +77,33 @@ plugins {
     id("info.offthecob.SpringService")
 }
 ```
+
+# Notes on maven central signing
+Generate subkey:
+```shell
+gpg --edit-key KEY_ID
+gpg> addkey
+Secret parts of primary key are stored on-card.
+Please select what kind of key you want:
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (5) Elgamal (encrypt only)
+   (6) RSA (encrypt only)
+  (10) ECC (sign only)
+  (12) ECC (encrypt only)
+  (14) Existing key from card
+Your selection? 10
+Please select which elliptic curve you want:
+   (1) Curve 25519 *default*
+   (4) NIST P-384
+   (6) Brainpool P-256
+Your selection? 1
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 1y
+```
+Export the subkey, upload to [mit](http://pgp.mit.edu/), and update github actions secrets.
