@@ -21,6 +21,24 @@ instead of the defaults.
 * `dgs` the version of Netflix DGS BOM to expose to the dependency management plugin.
 * `spring-boot` the version of Spring Boot BOM to expose to the dependency management plugin.
 
+## Settings
+This plugin auto imports submodules, adds foojay for gradle 9 toolchain api support, and updates the submodule 
+gradle file naming:
+
+```shell
+/build.gradle.kts
+/settings.gradle.kts
+/my-service/my-service.gradle.kts
+/my-library/my-library.gradle.kts
+```
+
+Add the following to the top of the settings.gradle.kts file:
+```gradle
+plugins {
+    id("info.offthecob.Settings")
+}
+```
+
 ## Base
 This plugin contains what I think are best practices for all jvm projects.
 
