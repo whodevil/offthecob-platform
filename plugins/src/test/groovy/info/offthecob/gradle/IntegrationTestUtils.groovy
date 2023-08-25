@@ -9,6 +9,16 @@ class IntegrationTestUtils {
         this.projectDir = projectDir
     }
 
+    def happyPathGradleArgs() {
+        return [
+                "clean",
+                "spotlessApply",
+                "check",
+                "-Pproject_directory=${projectDir}" as String,
+                "--write-locks"
+        ] as List<String>
+    }
+
     void setupDefaultProject() {
         defaultSettings()
         defaultBuildGradle()
@@ -22,18 +32,9 @@ class IntegrationTestUtils {
         def libraryDir = new File(System.getProperty("user.dir")).parentFile
         settings << """
         plugins {
-            id("org.gradle.toolchains.foojay-resolver") version "0.6.0"
+            id("info.offthecob.Settings")
         }
         rootProject.name = "test-project"
-        toolchainManagement {
-            jvm {
-                javaRepositories {
-                    repository("foojay") {
-                        resolverClass.set(org.gradle.toolchains.foojay.FoojayToolchainResolver::class.java)
-                    }
-                }
-            }
-        }
         dependencyResolutionManagement {
             repositories {
                 mavenCentral()
@@ -49,8 +50,12 @@ class IntegrationTestUtils {
     }
 
     void defaultBuildGradle() {
-        def buildGradle = new File(projectDir, "build.gradle.kts")
-        buildGradle << """
+        def buildGradleFile = new File(projectDir, "build.gradle.kts")
+        buildGradle(buildGradleFile)
+    }
+
+    void buildGradle(File buildGradleFile) {
+        buildGradleFile << """
         plugins {
             id("info.offthecob.Base")
         }
@@ -64,7 +69,11 @@ class IntegrationTestUtils {
     }
 
     void defaultJavaMain() {
-        def srcMain = new File(projectDir, "src/main/java/info/offthecob/testing")
+        mainJava(projectDir)
+    }
+
+    void mainJava(File parentDir) {
+        def srcMain = new File(parentDir, "src/main/java/info/offthecob/testing")
         srcMain.mkdirs()
         def mainFile = new File(srcMain, "Main.java")
         @Language("java")
@@ -86,7 +95,11 @@ class IntegrationTestUtils {
     }
 
     void defaultTesting() {
-        def srcTest = new File(projectDir, "src/test/groovy/info/offthecob/testing")
+        testing(projectDir)
+    }
+
+    void testing(File parentDir) {
+        def srcTest = new File(parentDir, "src/test/groovy/info/offthecob/testing")
         srcTest.mkdirs()
         def mainTestFile = new File(srcTest, "MainTest.groovy")
         @Language("groovy")
@@ -123,7 +136,11 @@ class IntegrationTestUtils {
     }
 
     void defaultKotlin() {
-        def srcMain = new File(projectDir, "src/main/kotlin/info/offthecob/testing")
+        kotlin(projectDir)
+    }
+
+    void kotlin(File parentDir) {
+        def srcMain = new File(parentDir, "src/main/kotlin/info/offthecob/testing")
         srcMain.mkdirs()
         def kotlinFile = new File(srcMain, "KotlinFunctional.kt")
 

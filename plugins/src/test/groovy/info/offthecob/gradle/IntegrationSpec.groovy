@@ -9,7 +9,11 @@ class IntegrationSpec extends Specification {
     @TempDir
     File projectDirectory
 
+    @Shared
+    IntegrationTestUtils utils
+
     def setupSpec() {
-        new IntegrationTestUtils(projectDirectory).setupDefaultProject()
+        utils = new IntegrationTestUtils(projectDirectory)
+        utils.setupDefaultProject()
     }
 }

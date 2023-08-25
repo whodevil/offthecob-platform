@@ -74,19 +74,41 @@ gradlePlugin {
                 'spring-boot' plugins.
                 """.trimIndent()
         }
+        create("settings") {
+            id = "info.offthecob.Settings"
+            implementationClass = "info.offthecob.gradle.SettingsPlugin"
+            tags.set(listOf("conventions", "settings"))
+            displayName = "Offthecob Settings"
+            description =
+                """
+                * Includes the foojay plugin for gradle 9 support of the toolchain api. 
+                * Auto imports sub projects.
+                
+                This also changes gradle to expect sub project's build.gradle.kts to be 
+                <sub project name>.gradle.kts. For example:
+                
+                * build.gradle.kts
+                * settings.gradle.kts
+                * my-service/my-service.gradle.kts
+                * my-library/my-library.gradle.kts
+                """.trimIndent()
+        }
     }
 }
 
 dependencies {
     implementation(gradleApi())
+
+    api(libs.foojay.resolver)
     api(libs.jib)
+    api(libs.kotlin.jvm.plugin)
+    api(libs.kotlin.allopen)
     api(libs.nullaway.plugin)
     api(libs.spotless)
     api(libs.spring.boot.gradle)
     api(libs.spring.boot.jib.extension)
     api(libs.spring.dependency.management)
-    api(libs.kotlin.jvm.plugin)
-    api(libs.kotlin.allopen)
+
     compileOnly(libs.jetbrains.annotations)
 
     testImplementation(gradleTestKit())
