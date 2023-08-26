@@ -34,8 +34,8 @@ configure<PublishingExtension> {
                 }
                 scm {
                     connection.set("scm:git:git://github.com/whodevil/jvm-platform.git")
-                    developerConnection.set("scm:git:https://github.com/whodevil/jvm-platform.git")
-                    url.set("https://github.com/whodevil/jvm-platform")
+                    developerConnection.set("scm:git:ssh://github.com:whodevil/jvm-platform.git")
+                    url.set("https://github.com/whodevil/jvm-platform/tree/master")
                 }
             }
         }
