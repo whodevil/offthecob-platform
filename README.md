@@ -1,13 +1,26 @@
 JVM Platform
 ============
-This is a set of "jvm platforms" intended to help me keep my personal projects
-libraries up to date.
+This project contains a series of best practices around managing dependencies and building
+code for the JVM.
 
 # Catalog
 Produces an artifact containing the library versions maintained in `gradle/libs.versions.toml`.
 This artifact can be used downstream in other projects with the gradle `versionsCatalog`
 api. Essentially the catalog helps keep the list of approved libraries maintained in 
-one place.
+one place. Inside `settings.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+    versionCatalogs {
+        create("libs") {
+            from("info.offthecob.platform:catalog:1.0.9")
+        }
+    }
+}
+```
 
 # Plugins
 A list of best practices around dependency locking, linting, and other build best practices.
@@ -23,7 +36,7 @@ instead of the defaults.
 
 ## Settings
 This plugin auto imports submodules, adds foojay for gradle 9 toolchain api support, and updates the submodule 
-gradle file naming:
+gradle file naming.
 
 ```shell
 /build.gradle.kts
@@ -35,9 +48,14 @@ gradle file naming:
 Add the following to the top of the settings.gradle.kts file:
 ```gradle
 plugins {
-    id("info.offthecob.Settings")
+    id("info.offthecob.Settings") version "1.0.9"
 }
 ```
+
+### Using the Settings plugin with other plugins in this system
+If a project uses settings and other `info.offthecob` plugins, the version only needs
+to be declared on the settings plugin, because once the jar is in the classpath, gradle will implicitly know to use it.
+Declaring the version in more than one place could also lead to built time conflicts.
 
 ## Base
 This plugin contains what I think are best practices for all jvm projects.
@@ -78,7 +96,18 @@ plugins {
 }
 ```
 
-# Notes on maven central signing
+# Releasing
+When doing a GitHub release for this project, plugins are pushed to the gradle plugin portal, and other artifacts
+are published to the SonaType OSSRH staging server. To complete the release to maven central: 
+
+* Login to the [nexus repository manager](https://s01.oss.sonatype.org) 
+* Find the staging repositories section
+* Find the latest staging repository object
+* Verify it has the expected items in it
+* "close" the repository (making it available to release)
+* Finally, click the "release" button
+
+## Notes on maven central signing
 Generate subkey:
 ```shell
 gpg --edit-key KEY_ID
@@ -106,4 +135,11 @@ Please specify how long the key should be valid.
       <n>y = key expires in n years
 Key is valid for? (0) 1y
 ```
-Export the subkey, upload to [mit](http://pgp.mit.edu/), and update github actions secrets.
+
+Export the public key:
+
+```shell
+gpg --armor --export KEY_ID
+```
+
+Upload to the [Open PGP Key Server](https://keys.openpgp.org/), and update github actions secrets.
