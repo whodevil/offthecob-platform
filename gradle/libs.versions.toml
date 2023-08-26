@@ -22,8 +22,10 @@ slf4j = "1.7.25"
 spock = "2.2-M1-groovy-3.0"
 spotless = "6.20.0"
 spring-boot = "3.1.2"
+testcontainers = "1.17.6"
 
 [libraries]
+commons-cli = { module = "commons-cli:commons-cli", version = "1.5.0" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
 commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.18.0" }
@@ -35,12 +37,14 @@ groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
 groovy-json = { module = "org.codehaus.groovy:groovy-json", version.ref = "groovy" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
+javalin = { module = "io.javalin:javalin", version = "5.6.1" }
 jetbrains-annotations = { module = "org.jetbrains:annotations", version = "24.0.1" }
 jib = { module = "com.google.cloud.tools:jib-gradle-plugin", version.ref = "jib" }
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.9.3" }
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin"}
+kotlin-cli = { module = "org.jetbrains.kotlinx:kotlinx-cli", version = "0.3.5" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice", version.ref = "kotlin-guice" }
 kotlin-jvm-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
@@ -50,8 +54,10 @@ lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-cli
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
 logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", version = "7.3" }
+lombok = { module = "org.projectlombok:lombok", version = "1.18.26" }
 nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
+posgresql-driver = { module = "org.postgresql:postgresql", version = "42.5.4" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4j-jcl = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-log4j = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
@@ -61,6 +67,11 @@ spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.re
 spring-boot-gradle = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot" }
 spring-boot-jib-extension = { module = "com.google.cloud.tools:jib-spring-boot-extension-gradle", version = "0.1.0" }
 spring-dependency-management = { module = "io.spring.dependency-management:io.spring.dependency-management.gradle.plugin", version = "1.1.2" }
+testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+testcontainers-spock = { module = "org.testcontainers:spock", version.ref = "testcontainers" }
+unirest = { module = "com.konghq:unirest-java", version = "3.11.09" }
 
 [bundles]
 apache-commons = ["commons-lang3", "commons-lang"]
@@ -69,6 +80,7 @@ lambda = ["lambda-runtime", "lambda-core", "lambda-events"]
 logging = ["kotlin-logging", "slf4j-jul", "slf4j-jcl", "slf4j-log4j", "slf4j-api", "logback", "logback-core", "logback-logstash"]
 spock = ["spock-core", "junit", "objenesis"]
 groovy = ["groovy-lang", "groovy-json"]
+testcontainers = ["testcontainers-core", "testcontainers-junit-jupiter", "testcontainers-postgresql", "testcontainers-spock"]
 
 [plugins]
 dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck" }
