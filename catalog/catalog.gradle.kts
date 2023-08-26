@@ -20,7 +20,7 @@ configure<PublishingExtension> {
                 licenses {
                     license {
                         name.set("The MIT License")
-                        url.set("https://raw.githubusercontent.com/whodevil/jvm-platform/main/LICENSE")
+                        url.set("https://opensource.org/license/mit/")
                     }
                 }
                 developers {
@@ -31,8 +31,9 @@ configure<PublishingExtension> {
                     }
                 }
                 scm {
-                    developerConnection.set("scm:git:https://github.com/whodevil/jvm-platform.git")
-                    url.set("https://github.com/whodevil/jvm-platform")
+                    connection.set("scm:git:git://github.com/whodevil/jvm-platform.git")
+                    developerConnection.set("scm:git:ssh://github.com:whodevil/jvm-platform.git")
+                    url.set("https://github.com/whodevil/jvm-platform/tree/master")
                 }
             }
         }
