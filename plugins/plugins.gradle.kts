@@ -47,7 +47,7 @@ gradlePlugin {
             id = "info.offthecob.Service"
             implementationClass = "info.offthecob.gradle.ServicePlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "jib", "containers"))
-            displayName = "Offthecob JVM Service"
+            displayName = "Offthecob Service"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Base' but includes 'jib' for building
@@ -58,7 +58,7 @@ gradlePlugin {
             id = "info.offthecob.Library"
             implementationClass = "info.offthecob.gradle.LibraryPlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "library"))
-            displayName = "Offthecob JVM Library"
+            displayName = "Offthecob Library"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Base' but includes 'java-library' for
@@ -69,7 +69,7 @@ gradlePlugin {
             id = "info.offthecob.SpringService"
             implementationClass = "info.offthecob.gradle.SpringService"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "jib", "containers", "spring"))
-            displayName = "Offthecob JVM Spring Service"
+            displayName = "Offthecob Spring Service"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Service' but includes customization of
