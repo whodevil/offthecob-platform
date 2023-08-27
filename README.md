@@ -1,8 +1,8 @@
-JVM Platform
+Offthecob Platform
 ============
 This project contains a series of best practices around managing dependencies and building
 code for the JVM. For examples of this ecosystem, check out the 
-[jvm-platform-examples](https://github.com/whodevil/jvm-platform-examples) repository.
+[offthecob-platform-examples](https://github.com/whodevil/offthecob-platform-examples) repository.
 
 # Catalog
 Produces an artifact containing the library versions maintained in `gradle/libs.versions.toml`.
