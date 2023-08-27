@@ -16,6 +16,7 @@ class BasePlugin : Plugin<Project> {
             apply(JavaCustomization::class.java)
             apply(GroovyPlugin::class.java)
             apply("kotlin")
+            apply("kotlin-allopen")
             apply(KotlinCustomization::class.java)
 
             apply(NullAwayPlugin::class.java)
