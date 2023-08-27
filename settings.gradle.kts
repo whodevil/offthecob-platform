@@ -12,14 +12,11 @@ toolchainManagement {
     }
 }
 
-rootProject.name = "jvm-platform"
+rootProject.name = "offthecob-platform"
 
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
-        maven {
-            url = uri("https://jitpack.io")
-        }
     }
 }
 

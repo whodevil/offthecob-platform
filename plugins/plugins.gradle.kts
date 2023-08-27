@@ -24,19 +24,22 @@ group = "info.offthecob"
 version = System.getenv("REVISION") ?: "SNAPSHOT"
 
 gradlePlugin {
-    website.set("https://github.com/whodevil/jvm-platform")
-    vcsUrl.set("https://github.com/whodevil/jvm-platform.git")
+    website.set("https://github.com/whodevil/offthecob-platform")
+    vcsUrl.set("https://github.com/whodevil/offthecob-platform.git")
     plugins {
         create("base") {
             id = "info.offthecob.Base"
             implementationClass = "info.offthecob.gradle.BasePlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions"))
-            displayName = "Offthecob JVM Base"
+            displayName = "Offthecob Base"
             description =
                 """
                 This plugin contains a bunch of best practices around how to build projects for the JVM.
                 This includes dependency locking by default, kotlin support, groovy support (for testing), 
                 wiring up the junit platform, null away, and linting.
+                
+                The Base plugin also offers a task to help update lock files:
+                ./gradlew resolveAndLockAll --write-locks
                 """.trimIndent()
 
         }
@@ -44,7 +47,7 @@ gradlePlugin {
             id = "info.offthecob.Service"
             implementationClass = "info.offthecob.gradle.ServicePlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "jib", "containers"))
-            displayName = "Offthecob JVM Service"
+            displayName = "Offthecob Service"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Base' but includes 'jib' for building
@@ -55,7 +58,7 @@ gradlePlugin {
             id = "info.offthecob.Library"
             implementationClass = "info.offthecob.gradle.LibraryPlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "library"))
-            displayName = "Offthecob JVM Library"
+            displayName = "Offthecob Library"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Base' but includes 'java-library' for
@@ -66,7 +69,7 @@ gradlePlugin {
             id = "info.offthecob.SpringService"
             implementationClass = "info.offthecob.gradle.SpringService"
             tags.set(listOf("kotlin", "java", "groovy", "conventions", "jib", "containers", "spring"))
-            displayName = "Offthecob JVM Spring Service"
+            displayName = "Offthecob Spring Service"
             description =
                 """
                 This plugin contains all the work from 'info.offthecob.Service' but includes customization of

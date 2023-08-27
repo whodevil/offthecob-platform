@@ -17,7 +17,7 @@ configure<PublishingExtension> {
             pom {
                 name.set("bom")
                 description.set("Bill of Materials (BOM) for info.offthecob.platform")
-                url.set("https://github.com/whodevil/jvm-platform")
+                url.set("https://github.com/whodevil/offthecob-platform")
                 licenses {
                     license {
                         name.set("The MIT License")
@@ -32,9 +32,9 @@ configure<PublishingExtension> {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/whodevil/jvm-platform.git")
-                    developerConnection.set("scm:git:ssh://github.com:whodevil/jvm-platform.git")
-                    url.set("https://github.com/whodevil/jvm-platform/tree/master")
+                    connection.set("scm:git:git://github.com/whodevil/offthecob-platform.git")
+                    developerConnection.set("scm:git:ssh://github.com:whodevil/offthecob-platform.git")
+                    url.set("https://github.com/whodevil/offthecob-platform/tree/master")
                 }
             }
         }
