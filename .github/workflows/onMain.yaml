@@ -24,7 +24,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Publish Packages
-        run: ./gradlew common:publishCommonPublicationToGitHubPackagesRepository catalog:publishCatalogPublicationToGitHubPackagesRepository
+        run: ./gradlew common:publishCommonPublicationToGitHubPackagesRepository catalog:publishCatalogPublicationToGitHubPackagesRepository bom:publishBOMPublicationToGitHubPackagesRepository
         env:
           USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
