@@ -7,7 +7,7 @@ groovy = "3.0.10"
 gson = "2.9.0"
 guava = "30.1.1-jre"
 guice = "5.1.0"
-jacoco = "0.8.7"
+javalin = "5.6.1"
 jib = "3.3.2"
 junit = "5.9.1"
 klaxon = "5.5"
@@ -37,7 +37,8 @@ groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
 groovy-json = { module = "org.codehaus.groovy:groovy-json", version.ref = "groovy" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
-javalin = { module = "io.javalin:javalin", version = "5.6.1" }
+javalin = { module = "io.javalin:javalin", version.ref = "javalin" }
+javalin-graphql = { module = "io.javalin:javalin-graphql", version.ref = "javalin" }
 jetbrains-annotations = { module = "org.jetbrains:annotations", version = "24.0.1" }
 jib = { module = "com.google.cloud.tools:jib-gradle-plugin", version.ref = "jib" }
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
