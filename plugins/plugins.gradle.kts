@@ -24,19 +24,22 @@ group = "info.offthecob"
 version = System.getenv("REVISION") ?: "SNAPSHOT"
 
 gradlePlugin {
-    website.set("https://github.com/whodevil/jvm-platform")
-    vcsUrl.set("https://github.com/whodevil/jvm-platform.git")
+    website.set("https://github.com/whodevil/offthecob-platform")
+    vcsUrl.set("https://github.com/whodevil/offthecob-platform.git")
     plugins {
         create("base") {
             id = "info.offthecob.Base"
             implementationClass = "info.offthecob.gradle.BasePlugin"
             tags.set(listOf("kotlin", "java", "groovy", "conventions"))
-            displayName = "Offthecob JVM Base"
+            displayName = "Offthecob Base"
             description =
                 """
                 This plugin contains a bunch of best practices around how to build projects for the JVM.
                 This includes dependency locking by default, kotlin support, groovy support (for testing), 
                 wiring up the junit platform, null away, and linting.
+                
+                The Base plugin also offers a task to help update lock files:
+                ./gradlew resolveAndLockAll --write-locks
                 """.trimIndent()
 
         }

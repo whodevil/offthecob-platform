@@ -10,7 +10,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/whodevil/jvm-platform")
+                url = uri("https://maven.pkg.github.com/whodevil/offthecob-platform")
                 credentials {
                     username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
                     password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
