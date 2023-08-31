@@ -32,7 +32,7 @@ If a version catalog exists with the following version definitions, the plugins 
 instead of the defaults.
 
 * `kotlin` manages the version of the kotlin toolchain.
-* `dgs` the version of Netflix DGS BOM to expose to the dependency management plugin.
+* `dgs` the version of [Netflix DGS](https://netflix.github.io/dgs/) BOM to expose to the dependency management plugin.
 * `spring-boot` the version of Spring Boot BOM to expose to the dependency management plugin.
 
 ## Settings
