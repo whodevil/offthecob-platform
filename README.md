@@ -67,6 +67,13 @@ plugins {
 }
 ```
 
+This plugin contains a bunch of best practices around how to build projects for the JVM.
+This includes dependency locking by default, kotlin support, groovy support (for testing), 
+wiring up the junit platform, null away, and linting.
+
+The Base plugin also offers a task to help update lock files:
+`./gradlew resolveAndLockAll --write-locks`
+
 ## Library
 This includes everything in base, but enables the `java-library` plugin, adding the api configuration
 as well as the jar task
@@ -99,7 +106,8 @@ plugins {
 
 # Releasing
 When doing a GitHub release for this project, plugins are pushed to the gradle plugin portal, and other artifacts
-are published to the SonaType OSSRH staging server. To complete the release to maven central: 
+are published to the [SonaType OSSRH](https://central.sonatype.org/publish/publish-guide/) staging server. To 
+complete the release to maven central: 
 
 * Login to the [nexus repository manager](https://s01.oss.sonatype.org) 
 * Find the staging repositories section
