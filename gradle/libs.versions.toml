@@ -16,7 +16,7 @@ kotlin-guice = "1.6.0"
 kotlin-logging = "1.7.6"
 logback = "1.2.3"
 nullaway-plugin = "1.5.0"
-objenesis = "3.2"
+objenesis = "3.3"
 slf4j = "1.7.25"
 spock = "2.2-M1-groovy-3.0"
 spotless = "6.20.0"
@@ -55,7 +55,7 @@ lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-cli
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
 logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", version = "7.4" }
-lombok = { module = "org.projectlombok:lombok", version = "1.18.26" }
+lombok = { module = "org.projectlombok:lombok", version = "1.18.28" }
 nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
 posgresql-driver = { module = "org.postgresql:postgresql", version = "42.5.4" }
