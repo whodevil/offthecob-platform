@@ -54,7 +54,7 @@ lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version = { s
 lambda-runtime = { module = "com.amazonaws:aws-lambda-java-runtime-interface-client", version = { strictly = "2.1.1" } }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
-logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", version = "7.3" }
+logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", version = "7.4" }
 lombok = { module = "org.projectlombok:lombok", version = "1.18.26" }
 nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
