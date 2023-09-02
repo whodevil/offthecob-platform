@@ -5,10 +5,10 @@ This project contains a series of best practices around managing dependencies an
 code for the JVM. For examples of this ecosystem, check out the [[https://github.com/whodevil/offthecob-platform-examples][Offthecob Platform Examples]] repository.
 
 * Catalog
-Produces an artifact containing the library versions maintained in `gradle/libs.versions.toml`.
-This artifact can be used downstream in other projects with the gradle `versionsCatalog`
-api. Essentially the catalog helps keep the list of approved libraries maintained in 
-one place. Inside `settings.gradle.kts`:
+Produces an artifact containing the library versions maintained in ~gradle/libs.versions.toml~.
+This artifact can be used downstream in other projects with the gradle ~versionsCatalog~
+API. Essentially the catalog helps keep the list of approved libraries maintained in
+one place. Inside ~settings.gradle.kts~:
 
 #+BEGIN_SRC kotlin
 dependencyResolutionManagement {
@@ -31,9 +31,9 @@ the downstream consumer's gradle files.
 If a version catalog exists with the following version definitions, the plugins below will use those version
 instead of the defaults.
 
-- `kotlin` manages the version of the kotlin toolchain.
-- `dgs` the version of [[https://netflix.github.io/dgs/][Netflix DGS]] BOM to expose to the dependency management plugin.
-- `spring-boot` the version of Spring Boot BOM to expose to the dependency management plugin.
+- ~kotlin~ manages the version of the kotlin toolchain.
+- ~dgs~ the version of [[https://netflix.github.io/dgs/][Netflix DGS]] BOM to expose to the dependency management plugin.
+- ~spring-boot~ the version of Spring Boot BOM to expose to the dependency management plugin.
 
 ** Settings
 This plugin auto imports submodules, adds foojay for gradle 9 toolchain api support, and updates the submodule 
@@ -46,7 +46,7 @@ gradle file naming.
 /my-library/my-library.gradle.kts
 #+END_SRC
 
-Add the following to the top of the settings.gradle.kts file:
+Add the following to the top of the ~settings.gradle.kts~ file:
 #+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Settings") version "1.0.9"
@@ -54,7 +54,7 @@ plugins {
 #+END_SRC
 
 *** Using the Settings plugin with other plugins in this system
-If a project uses settings and other `info.offthecob` plugins, the version only needs
+If a project uses settings and other ~info.offthecob~ plugins, the version only needs
 to be declared on the settings plugin, because once the jar is in the classpath, gradle will implicitly know to use it.
 Declaring the version in more than one place could also lead to built time conflicts.
 
@@ -72,10 +72,10 @@ This includes dependency locking by default, kotlin support, groovy support (for
 wiring up the junit platform, null away, and linting.
 
 The Base plugin also offers a task to help update lock files:
-`./gradlew resolveAndLockAll --write-locks`
+~./gradlew resolveAndLockAll --write-locks~
 
 ** Library
-This includes everything in base, but enables the `java-library` plugin, adding the api configuration
+This includes everything in base, but enables the ~java-library~ plugin, adding the API configuration
 as well as the jar task
 
 #+BEGIN_SRC kotlin
@@ -95,7 +95,7 @@ plugins {
 
 ** Spring Service
 This uses everything in Service, but also adds the Spring special sauce.
-Specifically, it adds the `spring-boot`, `dependency-management` and `kotlin-spring` plugins into scope,
+Specifically, it adds the ~spring-boot~, ~dependency-management~ and ~kotlin-spring~ plugins into scope,
 and customizes them with best practices. It also applies the jib extension for Spring.
 
 #+BEGIN_SRC kotlin
@@ -116,7 +116,7 @@ complete the release to maven central:
 - "close" the repository (making it available to release)
 - Finally, click the "release" button
 
-** Notes on maven central signing
+** Notes on Maven Central signing
 Generate subkey:
 #+BEGIN_SRC shell
 gpg --edit-key KEY_ID
