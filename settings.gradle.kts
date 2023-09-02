@@ -20,15 +20,15 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.projectDir.listFiles().filter { it.isDirectory }.map { subDir ->
-    subDir.listFiles().filter {
-        it.isFile && it.name.contains(".gradle.kts")
-    }.map {
-        File(it.parent).name
+rootProject.projectDir.listFiles()
+    .filter { it.isDirectory && !it.name.contains("buildSrc") }
+    .map { subDir ->
+        subDir.listFiles()
+            .filter { it.isFile && it.name.contains(".gradle.kts") }
+            .map { File(it.parent).name }
     }
-}.flatten().forEach {
-    include(it)
-}
+    .flatten()
+    .forEach { include(it) }
 
 rootProject.children.forEach { project ->
     project.buildFileName = "${project.name}.gradle.kts"
