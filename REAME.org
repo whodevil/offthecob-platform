@@ -1,16 +1,16 @@
-Offthecob Platform
-============
-This project contains a series of best practices around managing dependencies and building
-code for the JVM. For examples of this ecosystem, check out the 
-[Offthecob Platform Examples](https://github.com/whodevil/offthecob-platform-examples) repository.
+#+TITLE: Offthecob Platform
 
-# Catalog
+
+This project contains a series of best practices around managing dependencies and building
+code for the JVM. For examples of this ecosystem, check out the [[https://github.com/whodevil/offthecob-platform-examples][Offthecob Platform Examples]] repository.
+
+* Catalog
 Produces an artifact containing the library versions maintained in `gradle/libs.versions.toml`.
 This artifact can be used downstream in other projects with the gradle `versionsCatalog`
 api. Essentially the catalog helps keep the list of approved libraries maintained in 
 one place. Inside `settings.gradle.kts`:
 
-```kotlin
+#+BEGIN_SRC kotlin
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
@@ -21,9 +21,9 @@ dependencyResolutionManagement {
         }
     }
 }
-```
+#+END_SRC
 
-# Plugins
+* Plugins
 A list of best practices around dependency locking, linting, and other build best practices.
 This subproject also allows me to do all the things I do in every project in one place, cleaning up
 the downstream consumer's gradle files.
@@ -31,41 +31,41 @@ the downstream consumer's gradle files.
 If a version catalog exists with the following version definitions, the plugins below will use those version
 instead of the defaults.
 
-* `kotlin` manages the version of the kotlin toolchain.
-* `dgs` the version of [Netflix DGS](https://netflix.github.io/dgs/) BOM to expose to the dependency management plugin.
-* `spring-boot` the version of Spring Boot BOM to expose to the dependency management plugin.
+- `kotlin` manages the version of the kotlin toolchain.
+- `dgs` the version of [[https://netflix.github.io/dgs/][Netflix DGS]] BOM to expose to the dependency management plugin.
+- `spring-boot` the version of Spring Boot BOM to expose to the dependency management plugin.
 
-## Settings
+** Settings
 This plugin auto imports submodules, adds foojay for gradle 9 toolchain api support, and updates the submodule 
 gradle file naming.
 
-```shell
+#+BEGIN_SRC shell
 /build.gradle.kts
 /settings.gradle.kts
 /my-service/my-service.gradle.kts
 /my-library/my-library.gradle.kts
-```
+#+END_SRC
 
 Add the following to the top of the settings.gradle.kts file:
-```gradle
+#+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Settings") version "1.0.9"
 }
-```
+#+END_SRC
 
-### Using the Settings plugin with other plugins in this system
+*** Using the Settings plugin with other plugins in this system
 If a project uses settings and other `info.offthecob` plugins, the version only needs
 to be declared on the settings plugin, because once the jar is in the classpath, gradle will implicitly know to use it.
 Declaring the version in more than one place could also lead to built time conflicts.
 
-## Base
+** Base
 This plugin contains what I think are best practices for all jvm projects.
 
-```gradle
+#+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Base")
 }
-```
+#+END_SRC
 
 This plugin contains a bunch of best practices around how to build projects for the JVM.
 This includes dependency locking by default, kotlin support, groovy support (for testing), 
@@ -74,51 +74,51 @@ wiring up the junit platform, null away, and linting.
 The Base plugin also offers a task to help update lock files:
 `./gradlew resolveAndLockAll --write-locks`
 
-## Library
+** Library
 This includes everything in base, but enables the `java-library` plugin, adding the api configuration
 as well as the jar task
 
-```gradle
+#+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Library")
 }
-```
+#+END_SRC
 
-## Service
+** Service
 Similar to library, where it is based on the base plugin, but this plugin adds jib (a java native container builder).
 
-```gradle
+#+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Service")
 }
-```
+#+END_SRC
 
-## Spring Service
+** Spring Service
 This uses everything in Service, but also adds the Spring special sauce.
 Specifically, it adds the `spring-boot`, `dependency-management` and `kotlin-spring` plugins into scope,
 and customizes them with best practices. It also applies the jib extension for Spring.
 
-```gradle
+#+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.SpringService")
 }
-```
+#+END_SRC
 
-# Releasing
+* Releasing
 When doing a GitHub release for this project, plugins are pushed to the gradle plugin portal, and other artifacts
-are published to the [SonaType OSSRH](https://central.sonatype.org/publish/publish-guide/) staging server. To 
+are published to the [[https://central.sonatype.org/publish/publish-guide/][SonaType OSSRH]] staging server. To
 complete the release to maven central: 
 
-* Login to the [nexus repository manager](https://s01.oss.sonatype.org) 
-* Find the staging repositories section
-* Find the latest staging repository object
-* Verify it has the expected items in it
-* "close" the repository (making it available to release)
-* Finally, click the "release" button
+- Login to the [[https://s01.oss.sonatype.org][nexus repository manager]]
+- Find the staging repositories section
+- Find the latest staging repository object
+- Verify it has the expected items in it
+- "close" the repository (making it available to release)
+- Finally, click the "release" button
 
-## Notes on maven central signing
+** Notes on maven central signing
 Generate subkey:
-```shell
+#+BEGIN_SRC shell
 gpg --edit-key KEY_ID
 gpg> addkey
 Secret parts of primary key are stored on-card.
@@ -143,12 +143,12 @@ Please specify how long the key should be valid.
       <n>m = key expires in n months
       <n>y = key expires in n years
 Key is valid for? (0) 1y
-```
+#+END_SRC
 
 Export the public key:
 
-```shell
+#+BEGIN_SRC shell
 gpg --armor --export KEY_ID
-```
+#+END_SRC
 
-Upload to the [Open PGP Key Server](https://keys.openpgp.org/), and update github actions secrets.
+Upload to the [[https://keys.openpgp.org/][Open PGP Key Server]], and update github actions secrets.
