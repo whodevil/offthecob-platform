@@ -1,8 +1,7 @@
 plugins {
     signing
+    `maven-publish`
 }
-
-apply<PomPlugin>()
 
 group = "info.offthecob.platform"
 version = System.getenv("REVISION") ?: "SNAPSHOT"
@@ -23,6 +22,32 @@ configure<PublishingExtension> {
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+}
+
+publishing {
+    publications.withType<MavenPublication>().configureEach {
+        pom {
+            url.set("https://github.com/whodevil/offthecob-platform")
+            licenses {
+                license {
+                    name.set("The MIT License")
+                    url.set("https://opensource.org/license/mit/")
+                }
+            }
+            developers {
+                developer {
+                    id.set("whodevil")
+                    name.set("Devon Gleeson")
+                    email.set("whodevil@offthecob.info")
+                }
+            }
+            scm {
+                connection.set("scm:git:git://github.com/whodevil/offthecob-platform.git")
+                developerConnection.set("scm:git:ssh://github.com:whodevil/offthecob-platform.git")
+                url.set("https://github.com/whodevil/offthecob-platform/tree/master")
             }
         }
     }
