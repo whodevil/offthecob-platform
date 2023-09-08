@@ -1,6 +1,5 @@
 #+TITLE: Offthecob Platform
 
-
 This project contains a series of best practices around managing dependencies and building
 code for the JVM. For examples of this ecosystem, check out the [[https://github.com/whodevil/offthecob-platform-examples][Offthecob Platform Examples]] repository.
 
@@ -59,20 +58,18 @@ to be declared on the settings plugin, because once the jar is in the classpath,
 Declaring the version in more than one place could also lead to built time conflicts.
 
 ** Base
-This plugin contains what I think are best practices for all jvm projects.
+This plugin contains a bunch of best practices around how to build projects for the JVM.
+This includes dependency locking by default, kotlin support, groovy support (for testing),
+wiring up the junit platform, null away, and linting.
+
+The Base plugin also offers a task to help update lock files:
+~./gradlew resolveAndLockAll --write-locks~
 
 #+BEGIN_SRC kotlin
 plugins {
     id("info.offthecob.Base")
 }
 #+END_SRC
-
-This plugin contains a bunch of best practices around how to build projects for the JVM.
-This includes dependency locking by default, kotlin support, groovy support (for testing), 
-wiring up the junit platform, null away, and linting.
-
-The Base plugin also offers a task to help update lock files:
-~./gradlew resolveAndLockAll --write-locks~
 
 ** Library
 This includes everything in base, but enables the ~java-library~ plugin, adding the API configuration
