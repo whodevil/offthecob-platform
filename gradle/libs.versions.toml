@@ -26,6 +26,7 @@ testcontainers = "1.17.6"
 [libraries]
 aws-bom = { module = "software.amazon.awssdk:bom", version = "2.20.140" }
 commons-cli = { module = "commons-cli:commons-cli", version = "1.5.0" }
+commons-io = { module = "commons-io:commons-io", version = "2.13.0" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
 commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.18.0" }
