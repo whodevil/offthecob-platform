@@ -21,7 +21,7 @@ slf4j = "2.0.9"
 spock = "2.2-M1-groovy-3.0"
 spotless = "6.20.0"
 spring-boot = "3.1.2"
-testcontainers = "1.17.6"
+testcontainers = "1.19.0"
 
 [libraries]
 aws-bom = { module = "software.amazon.awssdk:bom", version = "2.20.140" }
