@@ -46,7 +46,7 @@ junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" 
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.9.3" }
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin"}
-kotlin-cli = { module = "org.jetbrains.kotlinx:kotlinx-cli", version = "0.3.5" }
+kotlin-cli = { module = "org.jetbrains.kotlinx:kotlinx-cli", version = "0.3.6" }
 kotlin-guice = { module = "dev.misfitlabs.kotlinguice4:kotlin-guice", version.ref = "kotlin-guice" }
 kotlin-jvm-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
