@@ -73,7 +73,7 @@ testcontainers-core = { module = "org.testcontainers:testcontainers", version.re
 testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
 testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
 testcontainers-spock = { module = "org.testcontainers:spock", version.ref = "testcontainers" }
-unirest = { module = "com.konghq:unirest-java", version = "3.11.09" }
+unirest = { module = "com.konghq:unirest-java", version = "3.14.5" }
 
 [bundles]
 apache-commons = ["commons-lang3", "commons-lang"]
