@@ -43,7 +43,7 @@ javalin-graphql = { module = "io.javalin:javalin-graphql", version.ref = "javali
 jetbrains-annotations = { module = "org.jetbrains:annotations", version = "24.0.1" }
 jib = { module = "com.google.cloud.tools:jib-gradle-plugin", version.ref = "jib" }
 junit = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.9.3" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.10.0" }
 klaxon = { module = "com.beust:klaxon", version.ref = "klaxon" }
 kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin"}
 kotlin-cli = { module = "org.jetbrains.kotlinx:kotlinx-cli", version = "0.3.6" }
