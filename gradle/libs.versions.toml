@@ -24,7 +24,7 @@ spring-boot = "3.1.2"
 testcontainers = "1.19.0"
 
 [libraries]
-aws-bom = { module = "software.amazon.awssdk:bom", version = "2.20.149" }
+aws-bom = { module = "software.amazon.awssdk:bom", version = "2.20.153" }
 commons-cli = { module = "commons-cli:commons-cli", version = "1.5.0" }
 commons-io = { module = "commons-io:commons-io", version = "2.13.0" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
