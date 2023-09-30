@@ -59,7 +59,7 @@ logback-logstash = { module = "net.logstash.logback:logstash-logback-encoder", v
 lombok = { module = "org.projectlombok:lombok", version = "1.18.30" }
 nullaway-plugin = { module = "net.ltgt.gradle:gradle-nullaway-plugin", version.ref = "nullaway-plugin" }
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
-posgresql-driver = { module = "org.postgresql:postgresql", version = "42.5.4" }
+posgresql-driver = { module = "org.postgresql:postgresql", version = "42.6.0" }
 slf4j-jul = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4j-jcl = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
 slf4j-log4j = { module = "org.slf4j:jcl-over-slf4j", version.ref = "slf4j" }
