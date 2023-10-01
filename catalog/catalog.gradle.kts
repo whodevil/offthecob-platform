@@ -6,6 +6,8 @@ plugins {
 catalog {
     versionCatalog {
         from(files("../gradle/libs.versions.toml"))
+        val bom = System.getenv("REVISION") ?: "SNAPSHOT"
+        library("offthecob-platform", "info.offthecob.platform:bom:$bom")
     }
 }
 
