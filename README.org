@@ -101,6 +101,11 @@ plugins {
 }
 #+END_SRC
 
+* Development
+#+BEGIN_SRC sh :results output :exports both :eval yes
+./gradlew check
+#+END_SRC
+
 * Releasing
 When doing a GitHub release for this project, plugins are pushed to the gradle plugin portal, and other artifacts
 are published to the [[https://central.sonatype.org/publish/publish-guide/][SonaType OSSRH]] staging server. To
