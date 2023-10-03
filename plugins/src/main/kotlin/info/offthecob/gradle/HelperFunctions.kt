@@ -11,19 +11,26 @@ fun pluginUnderTest(project: Project): Boolean {
     return ext.properties.containsKey(PROJECT_BUILDER_TEST)
 }
 
-fun getVersion(project: Project, name: String, default: String): String {
-    val catalog: VersionCatalog? = try {
-        project.rootProject.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
-    } catch (_: UnknownDomainObjectException) {
-        null
-    }
+fun getVersion(
+    project: Project,
+    name: String,
+    default: String,
+): String {
+    val catalog: VersionCatalog? =
+        try {
+            project.rootProject.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
+        } catch (_: UnknownDomainObjectException) {
+            null
+        }
 
     return if (catalog != null && catalog.findVersion(name).isPresent) {
         val version = catalog.findVersion(name).get().toString()
         project.logger.info("Using catalog version $version for $name")
         version
     } else {
-        project.logger.info("Plugin looked in Version Catalog 'libs' for version $name, and did not find anything, using default value $default.")
+        project.logger.info(
+            "Plugin looked in Version Catalog 'libs' for version $name, and did not find anything, using default value $default.",
+        )
         default
     }
 }
