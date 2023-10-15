@@ -14,6 +14,7 @@ const val PROCESSING_SUB_PROJECT_GRADLE = "Processing sub project gradle: %s"
 
 class SettingsPlugin : Plugin<Any> {
     private val logger = LoggerFactory.getLogger(SettingsPlugin::class.java)
+
     override fun apply(target: Any) =
         if (target is Settings) {
             apply(target)
@@ -58,8 +59,7 @@ class SettingsPlugin : Plugin<Any> {
             }
     }
 
-    private fun subDirectoriesNotNamedBuildSrc(): (File) -> Boolean =
-        { it.isDirectory and !it.name.contains(BUILD_SRC) }
+    private fun subDirectoriesNotNamedBuildSrc(): (File) -> Boolean = { it.isDirectory and !it.name.contains(BUILD_SRC) }
 
     private fun toolChainSupport(settings: Settings) {
         settings.plugins.apply(FoojayToolchainsPlugin::class.java)
