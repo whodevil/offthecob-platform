@@ -2,6 +2,7 @@
 commons-lang = "3.12.0"
 dependencycheck = "8.4.0"
 dgs = "7.3.6"
+fasterxml-jackson = "2.13.0"
 # current version is pinned based on DGS dependency
 graphql = "19.2"
 groovy = "3.0.19"
@@ -37,6 +38,8 @@ commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "co
 commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
 errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.22.0" }
 errorprone-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "3.1.0" }
+fasterxml-jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "fasterxml-jackson" }
+fasterxml-jackson-yaml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", version.ref = "fasterxml-jackson" }
 foojay-resolver =  { module = "org.gradle.toolchains:foojay-resolver", version = "0.7.0" }
 google-guice = { module = "com.google.inject:guice", version.ref = "guice" }
 graphql = { module = "com.graphql-java:graphql-java", version.ref = "graphql" }
