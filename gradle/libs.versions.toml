@@ -1,6 +1,6 @@
 [versions]
 commons-lang = "3.12.0"
-dependencycheck = "8.4.0"
+dependencycheck = "8.4.2"
 dgs = "7.3.6"
 fasterxml-jackson = "2.13.0"
 # current version is pinned based on DGS dependency
