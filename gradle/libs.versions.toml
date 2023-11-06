@@ -36,7 +36,7 @@ commons-cli = { module = "commons-cli:commons-cli", version = "1.5.0" }
 commons-io = { module = "commons-io:commons-io", version = "2.14.0" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
 commons-lang = { module = "commons-lang:commons-lang", version.ref = "commons-lang" }
-errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.22.0" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.23.0" }
 errorprone-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "3.1.0" }
 fasterxml-jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "fasterxml-jackson" }
 fasterxml-jackson-yaml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", version.ref = "fasterxml-jackson" }
