@@ -31,7 +31,7 @@ apache-spark-core = { module = "org.apache.spark:spark-core_2.13", version.ref =
 apache-spark-sql = { module = "org.apache.spark:spark-sql_2.13", version.ref = "apache-spark"}
 apache-spark-mllib = { module = "org.apache.spark:spark-mllib_2.13", version.ref = "apache-spark"}
 apache-spark-streaming = { module = "org.apache.spark:spark-streaming_2.13", version.ref = "apache-spark"}
-aws-bom = { module = "software.amazon.awssdk:bom", version = "2.21.15" }
+aws-bom = { module = "software.amazon.awssdk:bom", version = "2.21.21" }
 commons-cli = { module = "commons-cli:commons-cli", version = "1.5.0" }
 commons-io = { module = "commons-io:commons-io", version = "2.14.0" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
