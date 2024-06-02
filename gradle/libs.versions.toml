@@ -40,7 +40,7 @@ errorprone-core = { module = "com.google.errorprone:error_prone_core", version =
 errorprone-plugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "3.1.0" }
 fasterxml-jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "fasterxml-jackson" }
 fasterxml-jackson-yaml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", version.ref = "fasterxml-jackson" }
-foojay-resolver =  { module = "org.gradle.toolchains:foojay-resolver", version = "0.7.0" }
+foojay-resolver =  { module = "org.gradle.toolchains:foojay-resolver", version = "0.8.0" }
 google-guice = { module = "com.google.inject:guice", version.ref = "guice" }
 graphql = { module = "com.graphql-java:graphql-java", version.ref = "graphql" }
 groovy-lang = { module = "org.codehaus.groovy:groovy", version.ref = "groovy" }
