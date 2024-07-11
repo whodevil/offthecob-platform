@@ -5,8 +5,9 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.LogLevel
 
-private const val SPRING_BOOT = "spring.boot"
+private const val AZURE = "azure"
 private const val DGS = "dgs"
+private const val SPRING_BOOT = "spring.boot"
 
 class DependencyManagementCustomization : Plugin<Project> {
     override fun apply(project: Project) {
@@ -26,6 +27,10 @@ class DependencyManagementCustomization : Plugin<Project> {
                     Pair(
                         "com.netflix.graphql.dgs:graphql-dgs-platform-dependencies",
                         getVersion(project, DGS, DGS_DEFAULT_VERSION),
+                    ),
+                    Pair(
+                        "com.azure:azure-sdk-bom",
+                        getVersion(project, AZURE, AZURE_DEFAULT_VERSION),
                     ),
                 )
                     .forEach { (path, version) ->
