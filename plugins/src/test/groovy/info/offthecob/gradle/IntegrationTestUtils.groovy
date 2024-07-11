@@ -168,6 +168,7 @@ class IntegrationTestUtils {
         dependencies {
             implementation("org.springframework.boot:spring-boot-starter")
             implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
+            implementation("com.azure:azure-identity")            
         }
         """.stripIndent()
     }
