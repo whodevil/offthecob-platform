@@ -25,7 +25,7 @@ spock = "2.2-M1-groovy-3.0"
 spotless = "6.25.0"
 spring-boot = "3.3.1"
 testcontainers = "1.19.8"
-apache-spark = "3.5.0"
+apache-spark = "4.0.0-preview1"
 
 [libraries]
 apache-spark-core = { module = "org.apache.spark:spark-core_2.13", version.ref = "apache-spark"}
